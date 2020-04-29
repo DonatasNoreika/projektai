@@ -69,6 +69,7 @@
                 <field name="name"/>
                 <field name="client_id"/>
                 <field name="employees_percentage" widget="progressbar"/>
+                <field name="status"/>
             </tree>
         </field>
     </record>
