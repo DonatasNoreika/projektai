@@ -6,6 +6,9 @@
         <field name="model">projektai.saskaita</field>
         <field name="arch" type="xml">
             <form string="Invoice Form">
+                <header>
+                    <field name="status" widget="statusbar" clickable="True"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="number"/>

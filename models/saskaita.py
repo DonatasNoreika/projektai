@@ -9,6 +9,11 @@ class Saskaita(models.Model):
     client_id = fields.Many2one('res.partner', string="Client")
     projektas_id = fields.Many2one('projektai.projektas', string="Project")
     eilutes_ids = fields.One2many('projektai.eilute', 'saskaita_id', string="Darbai")
+    status = fields.Selection([
+        ('draft', "Draft"),
+        ('sent', "Sent"),
+        ('paid', "Paid"),
+    ], string="Progress", default='draft', translate=True)
 
 
 class SaskaitaEilute(models.Model):
