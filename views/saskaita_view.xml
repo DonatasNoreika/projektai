@@ -8,7 +8,7 @@
     </record>
 
 
-    <menuitem id="darbai_action_menu" name="Sąskaitos"
+    <menuitem id="saskaitos_action_menu" name="Sąskaitos"
               parent="projektai_menu"
               action="saskaitos_action"/>
     <!-- Full id location:

@@ -25,10 +25,30 @@
                                 <tree string="Works">
                                     <field name="name"/>
                                 </tree>
+                                <form string="Works">
+                                    <group>
+                                        <field name="name"/>
+                                    </group>
+                                </form>
                             </field>
                         </page>
                         <page string="Invoices">
-                            <field name="saskaitos_ids"/>
+                            <field name="saskaitos_ids">
+                                <tree string="Invoices">
+                                    <field name="number"/>
+                                </tree>
+                                <form string="Invoice">
+                                    <group>
+                                        <field name="number"/>
+                                        <field name="eilutes_ids">
+                                            <tree string="Lines" editable="True">
+                                                <field name="darbas_id"/>
+                                                <field name="price"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </form>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>

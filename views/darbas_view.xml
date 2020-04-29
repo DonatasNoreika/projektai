@@ -11,9 +11,5 @@
     <menuitem id="darbai_action_menu" name="Darbai"
               parent="projektai_menu"
               action="darbai_action"/>
-    <!-- Full id location:
-         action="openacademy.course_list_action"
-         It is not required when it is the same module -->
-
 
 </odoo>
