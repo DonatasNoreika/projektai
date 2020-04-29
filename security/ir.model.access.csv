@@ -1,3 +1,5 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 projektai_manager,projektai manager,model_projektai_projektas,,1,1,1,1
 darbai_manager,darbai manager,model_projektai_darbas,,1,1,1,1
+saskaitos_manager,saskaitos manager,model_projektai_saskaita,,1,1,1,1
+saskaitos_eilutes_manager,saskaitos eilutes manager,model_projektai_eilute,,1,1,1,1

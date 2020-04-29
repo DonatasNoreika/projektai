@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="saskaitos_action">
+        <field name="name">Sąskaitos</field>
+        <field name="res_model">projektai.saskaita</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="darbai_action_menu" name="Sąskaitos"
+              parent="projektai_menu"
+              action="saskaitos_action"/>
+    <!-- Full id location:
+         action="openacademy.course_list_action"
+         It is not required when it is the same module -->
+
+
+</odoo>
