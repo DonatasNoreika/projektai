@@ -5,6 +5,7 @@ class Saskaita(models.Model):
     _name = 'projektai.saskaita'
     _description = "Sąskaitos"
 
+    number = fields.Char(string="Number", required=True)
     client_id = fields.Many2one('res.partner', string="Client")
     projektas_id = fields.Many2one('projektai.projektas', string="Project")
     eilutes_ids = fields.One2many('projektai.eilute', 'saskaita_id', string="Darbai")

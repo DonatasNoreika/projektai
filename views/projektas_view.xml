@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+
+    <record model="ir.ui.view" id="projektai_form_view">
+        <field name="name">projektas.form</field>
+        <field name="model">projektai.projektas</field>
+        <field name="arch" type="xml">
+            <form string="Project Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="client_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Employees">
+                            <field name="employees_ids">
+                                <tree string="Employees">
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Works">
+                            <field name="darbai_ids">
+                                <tree string="Works">
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Invoices">
+                            <field name="saskaitos_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- override the automatically generated list view for courses -->
+    <record model="ir.ui.view" id="projektai_tree_view">
+        <field name="name">projektas.form</field>
+        <field name="model">projektai.projektas</field>
+        <field name="arch" type="xml">
+            <tree string="Project Tree">
+                <field name="name"/>
+                <field name="client_id"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="projektai_action">
         <field name="name">Projektai</field>
         <field name="res_model">projektai.projektas</field>
