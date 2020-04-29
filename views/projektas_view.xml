@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <form string="Project Form">
                 <header>
+                    <button name="send_info" string="Send project info" type="object" class="oe_highlight" confirm="Send email to Employees?"/>
                     <field name="status" widget="statusbar" clickable="True"/>
                 </header>
                 <sheet>
