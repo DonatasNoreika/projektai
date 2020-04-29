@@ -11,6 +11,7 @@
                     <group>
                         <field name="name"/>
                         <field name="client_id"/>
+                        <field name="employees_percentage" widget="progressbar"/>
                     </group>
                     <notebook>
                         <page string="Employees">
@@ -64,6 +65,7 @@
             <tree string="Project Tree">
                 <field name="name"/>
                 <field name="client_id"/>
+                <field name="employees_percentage" widget="progressbar"/>
             </tree>
         </field>
     </record>
