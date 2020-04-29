@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+
+    <record model="ir.ui.view" id="darbas_form_view">
+        <field name="name">darbas.form</field>
+        <field name="model">projektai.darbas</field>
+        <field name="arch" type="xml">
+            <form string="Work Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="projektas_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- override the automatically generated list view for courses -->
+    <record model="ir.ui.view" id="darbas_tree_view">
+        <field name="name">darbas.form</field>
+        <field name="model">projektai.darbas</field>
+        <field name="arch" type="xml">
+            <tree string="Work Tree">
+                <field name="name"/>
+                <field name="projektas_id"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="darbai_action">
         <field name="name">Darbai</field>
         <field name="res_model">projektai.darbas</field>

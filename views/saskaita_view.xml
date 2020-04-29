@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <record model="ir.ui.view" id="saskaita_form_view">
+        <field name="name">saskaita.form</field>
+        <field name="model">projektai.saskaita</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Form">
+                <sheet>
+                    <group>
+                        <field name="number"/>
+                        <field name="client_id"/>
+                        <field name="projektas_id"/>
+                        <field name="eilutes_ids">
+                            <tree string="Lines" editable="True">
+                                <field name="darbas_id"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- override the automatically generated list view for courses -->
+    <record model="ir.ui.view" id="saskaita_tree_view">
+        <field name="name">saskaita.form</field>
+        <field name="model">projektai.saskaita</field>
+        <field name="arch" type="xml">
+            <tree string="Invoices Tree">
+                <field name="number"/>
+                <field name="client_id"/>
+                <field name="projektas_id"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="saskaitos_action">
         <field name="name">Sąskaitos</field>
         <field name="res_model">projektai.saskaita</field>
@@ -11,9 +46,4 @@
     <menuitem id="saskaitos_action_menu" name="Sąskaitos"
               parent="projektai_menu"
               action="saskaitos_action"/>
-    <!-- Full id location:
-         action="openacademy.course_list_action"
-         It is not required when it is the same module -->
-
-
 </odoo>
