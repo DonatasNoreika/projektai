@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="projektai_action">
+        <field name="name">Projektai</field>
+        <field name="res_model">projektai.projektas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- top level menu: no parent -->
+    <menuitem id="main_projektas_menu" name="Projektų programa"/>
+    <!-- A first level in the left side menu is needed
+         before using action= attribute -->
+    <menuitem id="projektai_menu" name="Projektai"
+              parent="main_projektas_menu"/>
+    <!-- the following menuitem should appear *after*
+         its parent openacademy_menu and *after* its
+         action course_list_action -->
+    <menuitem id="projektai_action_menu" name="Projektai"
+              parent="projektai_menu"
+              action="projektai_action"/>
+    <!-- Full id location:
+         action="openacademy.course_list_action"
+         It is not required when it is the same module -->
+
+
+</odoo>

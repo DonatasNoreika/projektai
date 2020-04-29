@@ -28,9 +28,9 @@
     # always loaded
     'data': [
         # 'security/security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         # 'templates.xml',
-        # 'views/openacademy.xml',
+        'views/projektas_view.xml',
         # 'views/partner_inherited.xml',
         # 'views/session_board.xml',
         # 'reports.xml',
