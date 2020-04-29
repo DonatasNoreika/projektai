@@ -15,6 +15,12 @@ class Projektas(models.Model):
 
     employees_percentage = fields.Float('Employees percentage', compute='_get_employees_count')
 
+    status = fields.Selection([
+        ('draft', "Draft"),
+        ('started', "Started"),
+        ('done', "Done"),
+    ], string="Progress", default='draft', translate=True)
+
     @api.depends('employees_ids')
     def _get_employees_count(self):
         total_len = self.env['hr.employee'].search_count([])
