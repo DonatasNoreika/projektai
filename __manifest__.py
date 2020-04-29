@@ -31,6 +31,7 @@
         'security/ir.model.access.csv',
         # 'templates.xml',
         'views/projektas_view.xml',
+        'views/darbas_view.xml',
         # 'views/partner_inherited.xml',
         # 'views/session_board.xml',
         # 'reports.xml',

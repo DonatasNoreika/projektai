@@ -10,3 +10,4 @@ class Projektas(models.Model):
     name = fields.Char(string="Name", required=True)
     client_id = fields.Many2one('res.partner', string="Client")
     employees_ids = fields.Many2many('hr.employee', string="Employees")
+    darbai_ids = fields.One2many('projektai.darbas', 'projektas_id', string="Works")
