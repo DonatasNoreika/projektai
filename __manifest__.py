@@ -33,6 +33,7 @@
         'views/projektas_view.xml',
         'views/darbas_view.xml',
         'views/saskaita_view.xml',
+        'mail_templates.xml',
         # 'views/partner_inherited.xml',
         # 'views/session_board.xml',
         # 'reports.xml',
