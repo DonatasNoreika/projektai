@@ -21,6 +21,7 @@ class Projektas(models.Model):
         ('draft', "Draft"),
         ('started', "Started"),
         ('done', "Done"),
+        ('cancelled', "Cancelled"),
     ], string="Progress", default='draft', translate=True)
     color = fields.Integer()
 
