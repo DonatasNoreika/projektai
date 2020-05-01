@@ -15,7 +15,7 @@ class Projektas(models.Model):
     darbai_ids = fields.One2many('projektai.darbas', 'projektas_id', string="Works")
     saskaitos_ids = fields.One2many('projektai.saskaita', 'projektas_id', string="Sąskaitos")
 
-    employees_percentage = fields.Float('Employees percentage', compute='_get_employees_count')
+    employees_percentage = fields.Float('Employees percentage', compute='_get_employees_percentage')
 
     status = fields.Selection([
         ('draft', "Draft"),
@@ -23,11 +23,21 @@ class Projektas(models.Model):
         ('done', "Done"),
     ], string="Progress", default='draft', translate=True)
 
+    employees_count = fields.Integer(
+        string="Employees count", compute='_get_employees_count', store=True)
+
     @api.depends('employees_ids')
-    def _get_employees_count(self):
+    def _get_employees_percentage(self):
         total_len = self.env['hr.employee'].search_count([])
         for r in self:
             r.employees_percentage = (len(r.employees_ids) / total_len) * 100.0
+
+
+    @api.depends('employees_ids.name')
+    def _get_employees_count(self):
+        for r in self:
+            r.employees_count = len(r.employees_ids)
+            print(f"DN: {r.employees_count}")
 
     def send_info(self):
         template = self.env.ref('projektai.project_info_mail_template')

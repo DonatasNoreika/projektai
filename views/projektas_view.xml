@@ -91,10 +91,21 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="projektas_graph_view">
+        <field name="name">projektas.graph</field>
+        <field name="model">projektai.projektas</field>
+        <field name="arch" type="xml">
+            <graph string="Employees by Projektai">
+                <field name="name"/>
+                <field name="employees_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="projektai_action">
         <field name="name">Projektai</field>
         <field name="res_model">projektai.projektas</field>
-        <field name="view_mode">tree,form,calendar,pivot</field>
+        <field name="view_mode">tree,form,calendar,graph,pivot</field>
     </record>
 
 
