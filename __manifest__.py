@@ -22,7 +22,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr'],
+    'depends': ['base', 'hr', 'board'],
     # 'depends': ['base', 'res.partner', 'hr.employee'],
 
     # always loaded
@@ -36,7 +36,7 @@
         'reports/projektas_report.xml',
         'mail_templates.xml',
         'views/partner_inherited.xml',
-        # 'views/session_board.xml',
+        'views/project_board.xml',
         # 'reports.xml',
     ],
     # only loaded in demonstration mode
