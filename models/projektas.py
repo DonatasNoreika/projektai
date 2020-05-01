@@ -22,6 +22,7 @@ class Projektas(models.Model):
         ('started', "Started"),
         ('done', "Done"),
     ], string="Progress", default='draft', translate=True)
+    color = fields.Integer()
 
     employees_count = fields.Integer(
         string="Employees count", compute='_get_employees_count', store=True)
