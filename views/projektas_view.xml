@@ -135,11 +135,17 @@
                                 Project name:
                                 <field name="name"/>
                                 <br/>
+                                Client:
+                                <field name="client_id"/>
+                                <br/>
                                 Start date:
                                 <field name="start_date"/>
                                 <br/>
                                 End date:
                                 <field name="end_date"/>
+                                <br/>
+                                Status:
+                                <field name="status"/>
                             </div>
                         </div>
                     </t>
