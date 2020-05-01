@@ -8,6 +8,8 @@ class Projektas(models.Model):
     _description = "Projektai"
 
     name = fields.Char(string="Name", required=True)
+    start_date = fields.Date(default=fields.Date.today)
+    end_date = fields.Date(string="End Date")
     client_id = fields.Many2one('res.partner', string="Client")
     employees_ids = fields.Many2many('hr.employee', string="Employees")
     darbai_ids = fields.One2many('projektai.darbas', 'projektas_id', string="Works")

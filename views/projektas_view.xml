@@ -8,12 +8,15 @@
         <field name="arch" type="xml">
             <form string="Project Form">
                 <header>
-                    <button name="send_info" string="Send project info" type="object" class="oe_highlight" confirm="Send email to Employees?"/>
+                    <button name="send_info" string="Send project info" type="object" class="oe_highlight"
+                            confirm="Send email to Employees?"/>
                     <field name="status" widget="statusbar" clickable="True"/>
                 </header>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
                         <field name="client_id"/>
                         <field name="employees_percentage" widget="progressbar"/>
                     </group>
@@ -69,16 +72,29 @@
             <tree string="Project Tree">
                 <field name="name"/>
                 <field name="client_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
                 <field name="employees_percentage" widget="progressbar"/>
                 <field name="status"/>
             </tree>
         </field>
     </record>
 
+    <!-- calendar view -->
+    <record model="ir.ui.view" id="projektas_calendar_view">
+        <field name="name">projektas.calendar</field>
+        <field name="model">projektai.projektas</field>
+        <field name="arch" type="xml">
+            <calendar string="Projektai Calendar" date_start="start_date" date_stop="end_date" color="client_id">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="projektai_action">
         <field name="name">Projektai</field>
         <field name="res_model">projektai.projektas</field>
-        <field name="view_mode">tree,form,pivot</field>
+        <field name="view_mode">tree,form,calendar,pivot</field>
     </record>
 
 
