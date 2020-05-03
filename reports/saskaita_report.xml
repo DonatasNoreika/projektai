@@ -1,0 +1,40 @@
+<odoo>
+
+    <report
+            id="report_saskaita"
+            model="projektai.saskaita"
+            string="Sąskaita Report"
+            name="projektai.report_saskaita_view"
+            file="projektai.report_saskaita"
+            report_type="qweb-pdf"/>
+
+    <template id="report_saskaita_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1 class="text-center">Invoice <strong><span t-field="doc.number"/></strong></h1>
+                        <h2><strong>Client: </strong><span t-field="doc.client_id.name"/></h2>
+                        <h2><strong>Project: </strong><span t-field="doc.projektas_id.name"/></h2>
+                        <h2><strong>Status: </strong><span t-field="doc.status"/></h2>
+                        <h3 class="text-left"><strong>Lines:</strong></h3>
+                        <div class="row">
+                            <br/>
+                            <table class="table">
+                                <tr>
+                                    <td><strong>Job Title</strong></td>
+                                    <td><strong>Price</strong></td>
+                                </tr>
+                                <tr t-foreach="doc.eilutes_ids" t-as="line">
+                                    <td><span t-field="line.darbas_id.name"/></td>
+                                    <td><span t-field="line.price"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

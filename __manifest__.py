@@ -34,6 +34,7 @@
         'views/darbas_view.xml',
         'views/saskaita_view.xml',
         'reports/projektas_report.xml',
+        'reports/saskaita_report.xml',
         'mail_templates.xml',
         'views/partner_inherited.xml',
         'views/project_board.xml',
