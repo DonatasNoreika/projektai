@@ -8,4 +8,4 @@ class Employee(models.Model):
     # instructors
 
     project_ids = fields.Many2many('projektai.projektas',
-        string="Projects", readonly=True)
+        string="Projects")
