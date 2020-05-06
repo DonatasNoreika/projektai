@@ -11,6 +11,7 @@ class Projektas(models.Model):
     start_date = fields.Date(default=fields.Date.today)
     end_date = fields.Date(string="End Date")
     client_id = fields.Many2one('res.partner', string="Client")
+    manager_id = fields.Many2one('hr.employee', string="Manager", domain=[('manager', '=', True)])
     employees_ids = fields.Many2many('hr.employee', string="Employees")
     darbai_ids = fields.One2many('projektai.darbas', 'projektas_id', string="Works")
     saskaitos_ids = fields.One2many('projektai.saskaita', 'projektas_id', string="Sąskaitos")

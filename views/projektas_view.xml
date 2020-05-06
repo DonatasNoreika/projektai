@@ -18,6 +18,7 @@
                         <field name="start_date"/>
                         <field name="end_date"/>
                         <field name="client_id"/>
+                        <field name="manager_id"/>
                         <field name="employees_percentage" widget="progressbar"/>
                     </group>
                     <notebook>
@@ -72,6 +73,7 @@
             <tree string="Project Tree" decoration-muted="status == 'cancelled'" decoration-info="status == 'started'" decoration-success="status == 'done'">
                 <field name="name"/>
                 <field name="client_id"/>
+                <field name="manager_id"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
                 <field name="employees_percentage" widget="progressbar"/>

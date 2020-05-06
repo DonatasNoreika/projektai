@@ -6,6 +6,7 @@ class Employee(models.Model):
 
     # Add a new column to the res.partner model, by default partners are not
     # instructors
+    manager = fields.Boolean("Manager", default=False)
 
     project_ids = fields.Many2many('projektai.projektas',
         string="Projects")
