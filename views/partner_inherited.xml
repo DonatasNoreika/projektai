@@ -17,4 +17,15 @@
         </field>
     </record>
 
+    <record model="ir.actions.act_window" id="partners_action">
+        <field name="name">Partners</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="partner_action_menu" name="Partners"
+              parent="config_menu"
+              action="partners_action"/>
+
 </odoo>
