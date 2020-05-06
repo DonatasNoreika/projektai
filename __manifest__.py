@@ -37,6 +37,7 @@
         'reports/saskaita_report.xml',
         'mail_templates.xml',
         'views/partner_inherited.xml',
+        'views/hr_employee_inherited_view.xml',
         'views/project_board.xml',
         # 'reports.xml',
     ],
